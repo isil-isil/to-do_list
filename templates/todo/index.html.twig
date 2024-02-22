@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ma liste de tâches{% endblock %}
+
+{% block body %}
+<main class="container">
+               
+        <h1>Bonjour {{ app.user.firstname }} !</h1>
+        <p>Alors quoi de prévu pour aujourd'hui ?
+        </p>
+               
+        <a class="btn btn-info align-center" href="{{ path('todo_add')}}" role="button">Ajouter une nouvelle tache</a>
+	
+			<section class="vh-100 gradient-custom-2">
+				<div class="container py-5 h-100">
+					<div class="row d-flex justify-content-center align-items-center ">
+						<div class="col-md-12 col-xl-10">
+
+							<div class="card mask-custom">
+								<div class="card-body p-4 ">
+
+									<div class="text-center pt-3 pb-2">
+										<img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-todo-list/check1.webp" alt="Check" width="60">
+										<h2 class="my-4">A faire</h2>
+									</div>
+
+									<table class="table  mb-0">
+										<thead>
+											<tr>
+												<th scope="col">Utilisateur</th>
+												<th scope="col">Todo</th>
+												<th scope="col"></th>
+												<th scope="col"></th>
+											</tr>
+										</thead>
+										{% for todo in todo %}
+											<tbody>
+												<tr class="fw-normal">
+													<th>
+														<span class="ms-2">{{ todo.parent.firstname }}</span>
+													</th>
+													<td class="align-middle">
+														<span>{{ todo.tache }}</span>
+													</td>
+													<td class="align-middle">
+                                                    {# <a class="btn btn-info" href="{{ path('todo_edit', {id: todo.id}) }}" role="button">Modifier</a> #}
+													</td>
+													<td class="align-middle">
+														{# <button type="button" class="btn btn-success">J'ai terminé !</button> #}
+													</td>
+												</tr>
+
+											{% endfor %}
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+	</main>
+
+{% endblock %}

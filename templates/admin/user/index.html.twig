@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+
+<main class="container">
+
+<section class="vh-100 gradient-custom-2">
+		<div class="container py-5 ">
+			<div class="row d-flex justify-content-center align-items-center h-100">
+				<div class="col-md-12 col-xl-10">
+
+					<div class="card mask-custom">
+						<div class="card-body p-4 ">
+
+							<div class="text-center pt-3 pb-2">
+								<img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-todo-list/check1.webp" alt="Check" width="60">
+								<h2 class="my-4">Liste de tous les utilisateurs</h2>
+							</div>
+
+							<table class="table  mb-0">
+								<thead>
+									<tr>
+										<th scope="col">ID</th>
+										<th scope="col">Nom</th>
+										<th scope="col">Prénom</th>
+										<th scope="col"></th>
+									</tr>
+								</thead>
+								{% for user in user %}
+									<tbody>
+										<tr class="fw-normal">
+											<th>
+												<span class="ms-2">{{ user.id }}</span>
+											</th>
+											<td class="align-middle">
+												<span>{{ user.firstname }}</span>
+											</td>
+											<td class="align-middle">
+												<span>{{ user.lastname }}</span>
+											</td>
+											<td class="ml-auto">
+											{# <button type="button" class="btn btn-primary">Modifier</button>
+											<button type="button" class="btn btn-danger">Supprimer</button> #}
+											</td>
+										</tr>
+
+									{% endfor %}
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	
+
+</main>
+	
+{% endblock %}

@@ -1,0 +1,10 @@
+{{ form_start(todoForm) }}
+    {# {{ form(todoForm) }} #}
+    {{ form_row(todoForm.tache) }}
+    {{ form_row(todoForm.parent) }}
+    <button type="submit" class="btn btn-primary">{{ button_label | default ('Ajouter') }}</button>
+{{ form_end(todoForm) }}
+
+
+
+
