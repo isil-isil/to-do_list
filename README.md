@@ -1,4 +1,4 @@
-# Application TodoList avec Symfony
+# Application TodoList avec Symfony 📝
 
 Une application TodoList simple et efficace créée avec Symfony. Permet aux utilisateurs de créer un compte, de se connecter, et d'accéder à leur liste de tâches à faire. L'application offre les fonctionnalités suivantes :
 
